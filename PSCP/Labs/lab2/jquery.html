@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Me</title>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>ФИО:</h1>
+        <h2 id="inner"></h2>
+        <script>
+            let inp=document.getElementById('inner');
+            $.ajax({
+                method:'GET',
+                url:'/api/name',
+                success:(data)=>{
+                    $("#inner").html(data);
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Me</title>
+    </head>
+    <body>
+        <h1>ФИО:</h1>
+        <h2 id="inner"></h2>
+        <script>
+            let inp=document.getElementById('inner');
+            fetch("/api/name").then(response=>response.text()).then(responseText=>{inp.innerHTML=responseText})
+        </script>
+    </body>
+</html>
