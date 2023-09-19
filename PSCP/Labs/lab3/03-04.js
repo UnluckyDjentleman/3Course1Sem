@@ -30,10 +30,10 @@ http.createServer((request,response)=>{
             response.writeHead(200,{'Content-Type':'application/json;charset=utf-8'});
             var fac=new Fac(k,(err,res)=>{
                 if(err!=null){
-                    response.end(JSON.stringify({k: k, fact: res}))
+                    console.log(err)
                 }
                 else{
-                    console.log(err)
+                    response.end(JSON.stringify({k: k, fact: res}))
                 }
             })
             fac.FactCalculation();
