@@ -1,6 +1,6 @@
 /*secondJob=()=>{
     console.log("secondJob is running")
-    return promiseB.then((result)=>{console.log(result)})
+    return promiseB
 }*/
 const promiseB=new Promise((resolve,reject)=>{
     setTimeout(()=>{
@@ -8,7 +8,7 @@ const promiseB=new Promise((resolve,reject)=>{
     },3000)
 })
 
-//secondJob().then().catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});
+//secondJob().then((result)=>{console.log(result)}).catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});
 
 secondJob=async ()=>{
     console.log("secondJob is running")
