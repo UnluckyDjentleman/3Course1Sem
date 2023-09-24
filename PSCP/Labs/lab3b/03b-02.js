@@ -1,19 +1,19 @@
-secondJob=()=>{
+/*secondJob=()=>{
     console.log("secondJob is running")
     return promiseB.then((result)=>{console.log(result)})
-}
+}*/
 const promiseB=new Promise((resolve,reject)=>{
     setTimeout(()=>{
         reject('Oops...')
     },3000)
 })
 
-secondJob().then().catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});
+//secondJob().then().catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});
 
-/*async function secondJob(){
+secondJob=async ()=>{
     console.log("secondJob is running")
     let result=await promiseB;
-    console.log(result)
+    return result;
 }
 
-secondJob().catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});*/
+secondJob().then(result=>{console.log(result)}).catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});
