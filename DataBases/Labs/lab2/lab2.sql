@@ -8,8 +8,7 @@ create tablespace TS_GVS
 datafile 'TS_GVS.dbf'
 size 7M
 autoextend on next 5M
-maxsize 20M
-extent management local;
+maxsize 20M;
 
 
 --------------------------------2--------------------------------------
@@ -35,6 +34,7 @@ grant connect, create session, create any table, create any view, create any pro
 
 select * from dba_roles;
 
+drop role RL_GVSCORE;
 --------------------------------5--------------------------------------
 select PRIVILEGE
 from sys.dba_sys_privs
@@ -60,6 +60,7 @@ password_grace_time default
 connect_time 180
 idle_time 30;
 
+drop profile PF_GVSCORE;
 -------------------7-----------------------------------
 -- All profiles
 select PROFILE, RESOURCE_NAME, LIMIT from dba_profiles order by PROFILE;
@@ -81,16 +82,15 @@ profile PF_GVSCORE
 account unlock
 password expire
 
-grant create session to GVSCORE;
+grant create session, connect, create any table, create any view, create any procedure, drop any table, drop any view, drop any procedure to GVSCORE;
 
---drop user GVSCORE
+drop user GVSCORE
 ------------------9-------------------------------------
 --sqlplus in terminal
 --Enter user-name: XXXCORE
---Enter pass-word: identified by "pass-word"
+--Enter pass-word: identified by "*pass-word"
 --Then the terminal outputs that pass-word is expired and gives you to write New password...
 -----------------10-------------------------------------
-grant connect, create any table, create any view, create any procedure, drop any table, drop any view, drop any procedure to GVSCORE;
 
 --table
 create table GVSCORE_MANGAS
@@ -99,6 +99,8 @@ create table GVSCORE_MANGAS
   AUTHOR varchar(50), 
   RATING number
 );
+
+drop table GVSCORE_MANGAS
 
 insert into GVSCORE_MANGAS values ('Berserk', 'Kentaro Miura', 10);
 insert into GVSCORE_MANGAS values ('Freesia', 'Jiro Matsumoto', 10);
@@ -128,7 +130,7 @@ alter tablespace GVS_QDATA ONLINE;
 
 alter user GVSCORE quota 2M on GVS_QDATA;
 
-
+drop tablespace GVS_QDATA;
 
 -- connect GVSCORE
 

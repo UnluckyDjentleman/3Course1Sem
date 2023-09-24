@@ -1,5 +1,5 @@
-drop table GVS_t
-drop table GVS_t1
+drop table GVS_t;
+drop table GVS_t1;
 create table GVS_t(x number(3), s varchar2(50),primary key (x));
 INSERT into GVS_t values (12,'Jarome Iginla');
 INSERT into GVS_t values (48,'Daniel Briere');
