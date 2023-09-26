@@ -94,10 +94,9 @@ select * from dba_users;
 --alter session set container=cdb$root!!!!!!!!!!
 --enter code from screen2.png
 ----------------------------10-------------------------------------------------
---i need girlfriend((
---to be honest, I need to find a partner that will help me to pass this shit
---but, girls, i won't be against if you want to acquaint me
---t.me/ayashikizune666
+-- connect as sysdba
+-- create session to c##YYY;
+-- it's just temporary note. Result will describe later here)
 ----------------------------11-------------------------------------------------
 --change connection to u1_gvs_pdb
 select * from v$session;
