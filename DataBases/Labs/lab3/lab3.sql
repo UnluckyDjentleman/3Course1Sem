@@ -88,3 +88,23 @@ select * from dba_data_files;
 select * from dba_roles;
 select * from dba_sys_privs;
 select * from dba_users;
+-----------------------------9-------------------------------------------------
+--in sqlplus enter
+--conn as sysdba
+--alter session set container=cdb$root!!!!!!!!!!
+--enter code from screen2.png
+----------------------------10-------------------------------------------------
+--i need girlfriend((
+--to be honest, I need to find a partner that will help me to pass this shit
+--but, girls, i won't be against if you want to acquaint me
+--t.me/ayashikizune666
+----------------------------11-------------------------------------------------
+--change connection to u1_gvs_pdb
+select * from v$session;
+----------------------------13-------------------------------------------------
+--in sqlplus enter
+--conn as sysdba
+--alter session set container=cdb$root!!!!!!!!!!
+--drop pluggable database GVSPDB
+--drop user c##gvs
+--then drop all connections for this user
