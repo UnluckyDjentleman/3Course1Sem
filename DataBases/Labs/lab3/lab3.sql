@@ -3,7 +3,7 @@ select * from dba_pdbs;
 ------------------------2-------------------
 select * from V$INSTANCE;
 -----------------------3--------------------
-select * from v$option;
+select * from dba_registry;
 -----------------------4--------------------
 --if you use oracle oracle database 23c and dbca doesn't work then
 --from sqlplus connect as sysdba
@@ -94,9 +94,11 @@ select * from dba_users;
 --alter session set container=cdb$root!!!!!!!!!!
 --enter code from screen2.png
 ----------------------------10-------------------------------------------------
--- connect as sysdba
--- create session to c##YYY;
--- it's just temporary note. Result will describe later here)
+-- connect with partner to  same hot-spot
+-- create connection
+-- set hostname as ip of your partner
+-- set service name as his created pdb
+show CON_NAME;
 ----------------------------11-------------------------------------------------
 --change connection to u1_gvs_pdb
 select * from v$session;
