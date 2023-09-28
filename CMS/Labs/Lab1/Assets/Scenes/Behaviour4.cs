@@ -26,7 +26,7 @@ public class Behaviour4 : MonoBehaviour
         rb.AddForce(movement*speed);
         if (Input.GetKey(KeyCode.Space))
         {
-            Vector3 movement1 = new Vector3(moveHor, 5.0f, moveVer);
+            Vector3 movement1 = new Vector3(moveHor, 10.0f, moveVer);
             rb.AddForce(movement1 * speed);
         }
         else if (Input.GetKey(KeyCode.A))

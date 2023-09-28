@@ -2,23 +2,23 @@ select username from dba_users;
 
 
 --------------------------------1--------------------------------------
-drop tablespace TS_GVS;
+drop tablespace TS_GVS including CONTENTS and DATAFILES;
 
 create tablespace TS_GVS 
-datafile 'TS_GVS.dbf'
+datafile 'TS_GVS_1.dbf'
 size 7M
 autoextend on next 5M
 maxsize 20M;
 
 
 --------------------------------2--------------------------------------
-create temporary tablespace TS_GVS_TEMP
-tempfile 'TS_GVS_TEMP.dbf'
+create temporary tablespace TS_GVS_TEMP 
+tempfile 'TS_GVS_TEMP_1.dbf'
 size 5M
 autoextend on next 3M
 maxsize 30M;
 
-drop tablespace TS_GVS_TEMP;
+drop tablespace TS_GVS_TEMP including CONTENTS and DATAFILES;
 
 --------------------------------3--------------------------------------
 --all files
@@ -60,7 +60,7 @@ password_grace_time default
 connect_time 180
 idle_time 30;
 
-drop profile PF_GVSCORE;
+drop profile PF_GVSCORE cascade;
 -------------------7-----------------------------------
 -- All profiles
 select PROFILE, RESOURCE_NAME, LIMIT from dba_profiles order by PROFILE;
@@ -91,7 +91,7 @@ drop user GVSCORE
 --Enter pass-word: identified by "*pass-word"
 --Then the terminal outputs that pass-word is expired and gives you to write New password...
 -----------------10-------------------------------------
-
+-- connect GVSCORE
 --table
 create table GVSCORE_MANGAS
 (
@@ -104,7 +104,7 @@ drop table GVSCORE_MANGAS
 
 insert into GVSCORE_MANGAS values ('Berserk', 'Kentaro Miura', 10);
 insert into GVSCORE_MANGAS values ('Freesia', 'Jiro Matsumoto', 10);
-insert into GVSCORE_MANGAS values ('Ichi the Killer', 'Hideo Yamamoto', 10);
+insert into GVSCORE_MANGAS values ('Ichi the Killer', 'Hideo Yamamoto', 9);
 insert into GVSCORE_MANGAS values ('Homunculus', 'Hideo Yamamoto', 10);
 insert into GVSCORE_MANGAS values ('GTO', 'Toru Fujisawa', 9);
 insert into GVSCORE_MANGAS values ('GTO: Young Years', 'Toru Fujisawa', 8);
@@ -115,7 +115,7 @@ select TITLE, RATING from GVSCORE_MANGAS
 where AUTHOR = 'Hideo Yamamoto' or AUTHOR = 'Jiro Matsumoto';
 select * from GVSCORE_GURO;
 
---drop view GVSCORE_GURO;
+drop view GVSCORE_GURO;
 
 -----------------------------------------  TASK 11  ------------------------------------------
 
@@ -145,3 +145,5 @@ insert into GVSCORE_FAVTEAMS values ('San Antonio Spurs', 'Basketball');
 insert into GVSCORE_FAVTEAMS values ('Atletico Madrid', 'Football');
 
 select * from GVSCORE_FAVTEAMS;
+
+drop table GVSCORE_FAVTEAMS;

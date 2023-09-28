@@ -356,6 +356,8 @@
 "Assets/Scenes/Behaviour2.cs"
 "Assets/Scenes/Behaviour3.cs"
 "Assets/Scenes/Behaviour4.cs"
+"Assets/Scenes/Behaviour5.cs"
+"Assets/Scenes/Behaviour6.cs"
 -langversion:9.0
 
 /deterministic

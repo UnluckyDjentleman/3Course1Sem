@@ -61,6 +61,8 @@
     <Compile Include="Assets\Scenes\Behaviour1.cs" />
     <Compile Include="Assets\Scenes\Behaviour3.cs" />
     <Compile Include="Assets\Scenes\Behaviour4.cs" />
+    <Compile Include="Assets\Scenes\Behaviour5.cs" />
+    <Compile Include="Assets\Scenes\Behaviour6.cs" />
     <Compile Include="Assets\Scenes\Behaviour2.cs" />
   </ItemGroup>
   <ItemGroup>

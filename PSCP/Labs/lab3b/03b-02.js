@@ -12,8 +12,14 @@ const promiseB=new Promise((resolve,reject)=>{
 
 secondJob=async ()=>{
     console.log("secondJob is running")
-    let result=await promiseB;
-    return result;
+    try{
+        let result=await promiseB();
+        console.log(result);
+        return result;
+    }
+    catch(err){
+        return err;
+    }
 }
 
-secondJob().then(result=>{console.log(result)}).catch(error=>{console.log("Error: ",error)}).finally(()=>{console.log("Task 2 is done")});
+secondJob();
