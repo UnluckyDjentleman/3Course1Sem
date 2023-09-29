@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    Students of ITImba
+    <style>
+        #get,#post,#put,#delete{
+            display:none;
+        }
+        .row {
+            display: flex;
+            flex-direction: row;
+            height: 40px;
+            margin: -4px 0;
+            padding: 5px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="radio" id="getMethod" name="fff" onchange="Get()"/>
+    <label for="getMethod">GET</label>
+
+    <input type="radio" id="postMethod" name="fff" onchange="Post()"/>
+    <label for="postMethod">POST</label>
+
+    <input type="radio" id="putMethod" name="fff" onchange="Put()"/>
+    <label for="putMethod">PUT</label>
+
+    <input type="radio" id="deleteMethod" name="fff" onchange="Delete()"/>
+    <label for="deleteMethod">DELETE</label>
+
+    <div id="get">
+    </div>
+    <div id="post">
+        <div class="row">
+            <p>ID</p>
+            <input id="ID" type="number" min="0">
+        </div>
+        <div class="row">
+            <p>Name</p>
+            <input id="Name" type="text">
+        </div>
+        <div class="row">
+            <p>BDay</p>
+            <input id="Bday" type="text" placeholder="DD-MM-YYYY">
+        </div>
+        <button onclick="Send()">POST</button>
+    </div>
+    <div id="put">
+        <div class="row">
+            <p>ID</p>
+            <input id="ID_put" type="number" min="0" placeholder="Enter ID to update">
+        </div>
+        <div class="row">
+            <p>Name</p>
+            <input id="Name_put" type="text" placeholder="Enter new name">
+        </div>
+        <div class="row">
+            <p>BDay</p>
+            <input id="Bday_put" type="text" placeholder="DD-MM-YYYY">
+        </div>
+        <button onclick="SendUpdate()">PUT</button>
+    </div>
+    <div id="delete">
+        <div class="row">
+            <p>Enter ID to delete</p>
+            <input id="ID_del" type="number" min="0">
+        </div>
+        <button onclick="SendDelete()">DELETE</button>
+    </div>
+</div>
+<script>
+    Send=()=>{
+        if(ID.value!=""&&Name.value!=""&&Bday.value!=""){
+            fetch ('http://localhost:5000/api/db',{
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+                body: JSON.stringify({ id: ID.value, name: Name.value, bday: Bday.value })
+            }).then(response=>{ return responce.json(); })
+        }
+    }
+    SendUpdate=()=>{
+        if(ID_put.value!=""&&Name_put.value!=""&&Bday_put.value!=""){
+            fetch ('http://localhost:5000/api/db',{
+                method: 'PUT',
+                headers: { 'Content-Type':'application/json', 'Accept':'application/json' },
+                body: JSON.stringify({ id: ID_put.value, name: Name_put.value, bday: Bday_put.value })
+            }).then(response=>{ return response.json(); })
+        }
+    }
+    SendDelete=()=>{
+        if (ID_del.value != "") {
+            fetch('http://localhost:5000/api/db?id=' + ID_del.value, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+            }).then(response => { return response.json(); })
+        }
+    }
+    Get=()=>{
+        var elem=document.getElementById("get");
+        elem.style.display='block'
+        fetch('http://localhost:5000/api/db',{
+            method:'GET',
+            mode:'no-cors',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        }).then(response => { return response.json(); }).then(data=>showData(data));
+        var elem=document.getElementById("post");
+        elem.style.display='none'
+        var elem=document.getElementById("put");
+        elem.style.display='none'
+        var elem=document.getElementById("delete");
+        elem.style.display='none'
+    }
+    Post=()=>{
+        var elem=document.getElementById("get");
+        elem.style.display='none'
+        var elem=document.getElementById("post");
+        elem.style.display='block'
+        var elem=document.getElementById("put");
+        elem.style.display='none'
+        var elem=document.getElementById("delete");
+        elem.style.display='none'
+    }
+    Put=()=>{
+        var elem=document.getElementById("get");
+        elem.style.display='none'
+        var elem=document.getElementById("post");
+        elem.style.display='none'
+        var elem=document.getElementById("put");
+        elem.style.display='block'
+        var elem=document.getElementById("delete");
+        elem.style.display='none'
+    }
+    Delete=()=>{
+        var elem=document.getElementById("get");
+        elem.style.display='none'
+        var elem=document.getElementById("post");
+        elem.style.display='none'
+        var elem=document.getElementById("put");
+        elem.style.display='none'
+        var elem=document.getElementById("delete");
+        elem.style.display='block'
+    }
+    showData=(data)=>{
+        var mainContainer=document.getElementById("get");
+        mainContainer.innerHTML=""
+        for(let i=0;i<data.length;i++){
+            var div=document.createElement("div");
+            div.innerHTML=data[i].id+". Name: "+data[i].name+"; Birthday: "+data[i].bday;
+            mainContainer.appendChild(div);
+        }
+    }
+</script>
+</body>
+</html>
