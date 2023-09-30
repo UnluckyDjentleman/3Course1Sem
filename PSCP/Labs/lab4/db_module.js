@@ -79,17 +79,19 @@ function DB(){
         return JSON.stringify(db);
     }
     this.update=(updateString)=>{
+        console.log(db);
+        console.log(JSON.parse(updateString));
         var id = JSON.parse(updateString).id;
-        var index=db.findIndex(elem=>
-            elem.id===parseInt(id)
-        )
+        console.log("id to update: " + id + "\n")
+        var index=db.findIndex(elem=>elem.id===parseInt(id));
+        console.log(db[index]);
         db[index].name=JSON.parse(updateString).name;
         db[index].bday=JSON.parse(updateString).bday;
         return JSON.stringify(db[index]);
     }
     this.delete=(deleteId)=>{
         var index=db.findIndex(elem=>
-            elem.id===parseInt(deleteId))
+            elem.id===parseInt(deleteId));
         var deleteElem=db[index];
         db.splice(index,1);
         return JSON.stringify(deleteElem);
