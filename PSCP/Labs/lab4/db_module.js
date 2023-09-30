@@ -1,6 +1,7 @@
 const http=require('http');
 const util=require('util');
 const event=require('events');
+const { EventEmitter } = require('stream');
 
 let db=[
     {
@@ -64,11 +65,11 @@ let db=[
         bday: "05-04-2004"
     }
 ];
-function DB(){
-    this.select=()=>{
+class DB extends EventEmitter{
+    select=()=>{
         return JSON.stringify(db)
     }
-    this.insert=(newString)=>{
+    insert=(newString)=>{
         for(let i=0;i<db.length;i++){
             if(JSON.parse(newString).id==db[i].id){
                 return;
@@ -78,7 +79,7 @@ function DB(){
         db.push(JSON.parse(newString));
         return JSON.stringify(db);
     }
-    this.update=(updateString)=>{
+    update=(updateString)=>{
         console.log(db);
         console.log(JSON.parse(updateString));
         var id = JSON.parse(updateString).id;
@@ -89,7 +90,7 @@ function DB(){
         db[index].bday=JSON.parse(updateString).bday;
         return JSON.stringify(db[index]);
     }
-    this.delete=(deleteId)=>{
+    delete=(deleteId)=>{
         var index=db.findIndex(elem=>
             elem.id===parseInt(deleteId));
         var deleteElem=db[index];
