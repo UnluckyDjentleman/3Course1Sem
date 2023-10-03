@@ -66,10 +66,10 @@ let db=[
     }
 ];
 class DB extends EventEmitter{
-    select=()=>{
-        return JSON.stringify(db)
+    select=async ()=>{
+        return await JSON.stringify(db.sort((a,b)=>a.id-b.id))
     }
-    insert=(newString)=>{
+    insert=async (newString)=>{
         for(let i=0;i<db.length;i++){
             if(JSON.parse(newString).id==db[i].id){
                 return;
@@ -77,9 +77,9 @@ class DB extends EventEmitter{
         }
         console.log("[INSERT]\n");
         db.push(JSON.parse(newString));
-        return JSON.stringify(db);
+        return await JSON.stringify(db);
     }
-    update=(updateString)=>{
+    update=async(updateString)=>{
         console.log(db);
         console.log(JSON.parse(updateString));
         var id = JSON.parse(updateString).id;
@@ -88,15 +88,14 @@ class DB extends EventEmitter{
         console.log(db[index]);
         db[index].name=JSON.parse(updateString).name;
         db[index].bday=JSON.parse(updateString).bday;
-        return JSON.stringify(db[index]);
+        return await JSON.stringify(db[index]);
     }
-    delete=(deleteId)=>{
+    delete=async(deleteId)=>{
         var index=db.findIndex(elem=>
             elem.id===parseInt(deleteId));
         var deleteElem=db[index];
         db.splice(index,1);
-        return JSON.stringify(deleteElem);
+        return await JSON.stringify(deleteElem);
     }
 }
-util.inherits(DB,event.EventEmitter);
 exports.DB=DB;

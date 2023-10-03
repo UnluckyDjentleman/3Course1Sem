@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    Students of ITImba
     <style>
+        *{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
         #get,#post,#put,#delete{
             display:none;
         }
@@ -13,6 +15,28 @@
             margin: -4px 0;
             padding: 5px;
             align-items: center;
+        }
+        h1,h4{
+            text-align:center;
+        }
+        input[type=text], input[type=number]{
+            border-radius:4px;
+            margin-left:10px;
+        }
+        button{
+            background-color:lightgray;
+            width:90px;
+            height:30px;
+            border: 2px solid black;
+            border-radius:10px;
+            color:black;
+        }
+        button:active{
+            background-color:gray;
+            transform: scale(0.9);
+        }
+        label{
+            font-size:16px;
         }
     </style>
 </head>
@@ -35,7 +59,7 @@
     <div id="post">
         <div class="row">
             <p>ID</p>
-            <input id="ID" type="number" min="0">
+            <input id="ID" type="number" min="0"  placeholder="Enter ID to update">
         </div>
         <div class="row">
             <p>Name</p>
@@ -70,6 +94,8 @@
         <button onclick="SendDelete()">DELETE</button>
     </div>
 </div>
+<h1>ITImba Students</h1>
+<h4>Frontend Faculty</h4>
 <script>
     Send=()=>{
         if(ID.value!=""&&Name.value!=""&&Bday.value!=""){

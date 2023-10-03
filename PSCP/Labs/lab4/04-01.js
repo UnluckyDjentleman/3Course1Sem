@@ -8,26 +8,26 @@ const route='api/db';
 
 let db=new data.DB();
 
-db.on('GET',(req,resp)=>{
-    resp.end(db.select());
+db.on('GET',async(req,resp)=>{
+    resp.end(await db.select());
 });
-db.on('POST',(req,resp)=>{
+db.on('POST',async(req,resp)=>{
     console.log('POST called');
-    req.on('data',data=>{
-        resp.end(db.insert(data));
+    req.on('data', async(data)=>{
+        resp.end(await db.insert(data));
     })
 });
-db.on('PUT',(req,resp)=>{
+db.on('PUT',async(req,resp)=>{
     console.log('PUT called');
-    req.on('data',data=>{
-        resp.end(db.update(data));
+    req.on('data', async(data)=>{
+        resp.end(await db.update(data));
     })
 });
-db.on('DELETE',(req,resp)=>{
+db.on('DELETE',async(req,resp)=>{
     if(url.parse(req.url).pathname==='/'+route && typeof url.parse(req.url, true).query.id != 'undefined'){
         var id=parseInt(url.parse(req.url, true).query.id);
         if(Number.isInteger(id)){
-            resp.end(db.delete(id));
+            resp.end(await db.delete(id));
         }
         else{
             resp.end("ERROR! Id is NaN");
