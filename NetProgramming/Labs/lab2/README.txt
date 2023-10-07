@@ -1,4 +1,4 @@
-0) Create in project with DLL module file input where you should write your exports
+0) Create in project with DLL module file input (*.def) where you should write your exports
 1) Open Command Prompt as admin
 2) To register your DLL input this(my example, but you can have different):
 		regsvr32 /i "D:\Sem31\NetProgramming\lab2\SP02_COM\x64\Debug\SP02_COM.dll"
