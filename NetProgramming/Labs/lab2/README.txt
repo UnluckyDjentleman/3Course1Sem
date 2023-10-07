@@ -9,3 +9,4 @@ To be convinced that registration is successful
 5) To unregister your DLL
 		regsvr32 /i /u "D:\Sem31\NetProgramming\lab2\SP02_COM\x64\Debug\SP02_COM.dll"
 6) Good luck!
+PS: Also change the way to your LIB in SP02_04(there's my example)
