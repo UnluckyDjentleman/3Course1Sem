@@ -7,5 +7,5 @@
 To be convinced that registration is successful
 4) After that you can execute another projects)
 5) To unregister your DLL
-		regsvr32 /i "D:\Sem31\NetProgramming\lab2\SP02_COM\x64\Debug\SP02_COM.dll"
+		regsvr32 /i /u "D:\Sem31\NetProgramming\lab2\SP02_COM\x64\Debug\SP02_COM.dll"
 6) Good luck!
