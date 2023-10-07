@@ -9,5 +9,7 @@
 
 // add headers that you want to pre-compile here
 #include "framework.h"
+#include "Registry.h"
+#include "SP02.h"
 
 #endif //PCH_H

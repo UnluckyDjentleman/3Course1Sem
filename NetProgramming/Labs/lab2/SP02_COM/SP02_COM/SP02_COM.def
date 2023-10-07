@@ -1,0 +1,7 @@
+LIBRARY "SP02_COM"
+EXPORTS
+	DllCanUnloadNow PRIVATE
+	DllInstall 	PRIVATE
+	DllRegisterServer PRIVATE
+	DllUnregisterServer PRIVATE
+	DllGetClassObject PRIVATE

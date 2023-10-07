@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+  OperFactory.cpp
+  Registry.cpp
+D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\SP02_COM\Registry.cpp(152,24): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+  SP02.cpp
+  Generating Code...
+     Creating library D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\x64\Debug\SP02_COM.lib and object D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\x64\Debug\SP02_COM.exp
+  SP02_COM.vcxproj -> D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\x64\Debug\SP02_COM.dll

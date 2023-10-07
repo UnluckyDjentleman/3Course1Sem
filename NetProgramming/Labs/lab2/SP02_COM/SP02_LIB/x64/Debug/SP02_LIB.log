@@ -1,0 +1,4 @@
+﻿  pch.cpp
+  SP02_LIB.cpp
+D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\SP02_LIB\SP02_LIB.cpp(33): warning C4715: 'SP02::Init': not all control paths return a value
+  SP02_LIB.vcxproj -> D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\x64\Debug\SP02_LIB.lib

@@ -8,7 +8,7 @@
 		//   if CoCreateInstance(... IID_Unknown)!= succesfull --> throw (int)HRESULT  
 		namespace Adder
 		{
-			double Add(OS12HANDEL h, double x, double y);        // return x+y
+			double Ad(OS12HANDEL h, double x, double y);        // return x+y
 			//  if QueryInteface(IID_IAdder) != succesfull -->  throw (int)HRESULT     
 			double Sub(OS12HANDEL h, double x, double y);        // return x-y
 			//  if QueryInteface(IID_IAdder) != succesfull -->  throw (int)HRESULT

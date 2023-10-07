@@ -1,0 +1,3 @@
+﻿  SP02_04.cpp
+D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\SP02_04\SP02_04.cpp(5,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  SP02_04.vcxproj -> D:\Sem31\NetProgramming\Labs\lab2\SP02_COM\x64\Debug\SP02_04.exe
