@@ -1,8 +1,8 @@
 const nodemailer = require('nodemailer');
 
-const password = 'qbru dtcf xhih uios';
+const receiver = 'v.goroshchenja@gmail.com';
 
-send = (sender, receiver, message) =>
+send = (sender, password, message) =>
 {
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -14,7 +14,7 @@ send = (sender, receiver, message) =>
             pass: password
         }
     });
-
+    
     const mailOptions = {
         from: sender,
         to: receiver,

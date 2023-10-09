@@ -1,5 +1,14 @@
 {
   "dependencies": {
     "nodemailer": "^6.9.5"
-  }
+  },
+  "name": "dalvhikkimail",
+  "description": "1) To install nodemailer\r \tnpm install nodemailer\r That's all for this moment. When I'll do last task, I will let you know there)",
+  "version": "1.0.1",
+  "main": "m0603.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }

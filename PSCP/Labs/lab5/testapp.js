@@ -1,5 +1,5 @@
 //C:\Users\User\AppData\Roaming\npm\node_modules
-const send = require('dalvhikkimail');
+const send = require('C:\\Users\\User\\AppData\\Roaming\\npm\\node_modules\\dalvhikkimail');
 const http = require('http');
 
 http.createServer((req, res) => {

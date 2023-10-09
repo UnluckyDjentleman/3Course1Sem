@@ -23,7 +23,8 @@ http.createServer((req,resp)=>{
                 service:'Gmail',
                 auth:{
                     user:param.sender,
-                    pass:"ulll kbbl ivjy bhlc"
+                    pass:"jwvh fzdd kpkr wcor"
+                    //"ulll kbbl ivjy bhlc"
                     //"jwvh fzdd kpkr wcor"
                 }
             })
@@ -36,7 +37,7 @@ http.createServer((req,resp)=>{
     
             transporter.sendMail(mailOptons,(err,info)=>{
                 if(err){
-                    return console.log(err);
+                    return console.log(err.message);
                 }
                 return console.log("Sent: "+info.response);
             });
