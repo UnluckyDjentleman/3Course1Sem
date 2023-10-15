@@ -1,0 +1,8 @@
+{
+	_comment:"req: HTTP-Server",
+	"x": 45,
+	"y": 83,
+	"s": "Message",
+	"m":["a","b","c","d"],
+	"o":{"surname":"Goroshchenja","name":"Vlad"}
+}

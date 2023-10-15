@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Node.js Task8</title>
+        <style>
+            .row{
+                display: flex;
+                flex-direction: row;
+                height: 40px;
+                margin: -4px 0;
+                padding: 5px;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <form action="http://localhost:5000/formparameter" method="POST">
+                <div class="row">
+                    <p>Name</p>
+                    <input type="text" id="inpTxt" name="inpTxt" required/>
+                </div>
+                <div class="row">
+                    <p>Post Index</p>
+                    <input type="number" id="inpNum" name="inpNum" required/>
+                </div>
+                <div class="row">
+                    <p>Date of Birth</p>
+                    <input type="date" id="inpDate" name="inpDate" required/>
+                </div>
+                <div class="row">
+                    <p>Technologies</p>
+                    <input type="checkbox" id="inpCheck1" name="inpCheck1"/>
+                    <label for="inpCheck1">React</label>
+                    <input type="checkbox" id="inpCheck2" name="inpCheck2"/>
+                    <label for="inpRCheck2">Angular</label>
+                </div>
+                <div class="row">
+                    <p>Experience</p>
+                    <input type="radio" id="inpRadio1" name="inpRadio1"/>
+                    <label for="inpRadio1">Junior</label>
+                    <input type="radio" id="inpRadio2" name="inpRadio2"/>
+                    <label for="inpRadio2">Middle</label>
+                    <input type="radio" id="inpRadio3" name="inpRadio3"/>
+                    <label for="inpRadio3">Senior</label>
+                </div>
+                <div class="row">
+                    <p>Some notes about yourself</p>
+                    <input type="textarea" id="inpTextArea" name="inpTextArea"/>
+                </div>
+                <div class="row">
+                    <input type="submit" name="inpSubmit" value="SEND"/>
+                    <input type="submit" name="inpSubmit" value="SEND 2.0"/>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

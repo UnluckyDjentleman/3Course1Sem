@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Upload Files</title>
+        <style></style>
+    </head>
+    <body>
+        <div id="container">
+            <form action="http://localhost:5000/upload" method="POST" enctype="multipart/form-data">
+                <div id="fileLoader">
+                    <input type="file" id="inpLoad" name="inpUpload" required/>
+                    <label for="inpLoad">Your file</label>
+                </div>
+                <button type="submit" value="LOAD">Load</button>
+            </form>
+        </div>
+    </body>
+</html>

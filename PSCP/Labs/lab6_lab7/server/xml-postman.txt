@@ -1,0 +1,7 @@
+<request id="23">
+	<x value="23"/>
+	<x value="56"/>
+	<m value="a"/>
+	<m value="b"/>
+	<m value="c"/>
+</request>
