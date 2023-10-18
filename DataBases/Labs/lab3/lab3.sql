@@ -1,5 +1,6 @@
 -------------------------1------------------
 select * from dba_pdbs;
+select * from dba_users;
 ------------------------2-------------------
 select * from V$INSTANCE;
 -----------------------3--------------------
@@ -16,7 +17,7 @@ select * from dba_pdbs;
 ----------------------6---------------------
 --oracle swears that database isn't opened, so enter in sqlplus
 -- alter pluggable database GVSPDB open;
-alter session set container=GVSPDB;
+alter session set container=GVS_PDB;
 --Tablespace
 create tablespace GVS_PDB_SYS_TS
   datafile 'GVS_PDB_SYS_TS.dbf' 
@@ -106,6 +107,6 @@ select * from v$session;
 --in sqlplus enter
 --conn as sysdba
 --alter session set container=cdb$root!!!!!!!!!!
---drop pluggable database GVSPDB
+--drop pluggable database GVSPDB including datafiles
 --drop user c##gvs
 --then drop all connections for this user
