@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Update emloyees</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/static.css}"/>
+</head>
+<body>
+<div class="container">
+
+  <h1>Update employees:</h1>
+  <form th:action="@{/updateemployee}"
+        th:object="${employeeform}" method="POST">
+
+    <h2>Enter album employee info to update:</h2>
+    <p>Old Name:
+      <input type="text" th:field="*{oldName}" />
+    </p>
+    <p>Old Department:
+      <input type="text" th:field="*{oldDepartment}" />
+    </p>
+    <p>Old Role:
+      <input type="text" th:field="*{oldRole}" />
+    </p>
+
+    <h2>Enter new values:</h2>
+    <p>New Name:
+      <input type="text" th:field="*{newName}" />
+    </p>
+    <p>New Department:
+      <input type="text" th:field="*{newDepartment}" />
+    </p>
+    <p>New Role:
+      <input type="text" th:field="*{newRole}" />
+    </p>
+    <input class ="button-main-page" type="submit" value="Update" />
+  </form>
+
+</div>
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+</div>
+</body>

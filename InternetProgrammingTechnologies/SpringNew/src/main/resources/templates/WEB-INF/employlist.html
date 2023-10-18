@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book List</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/static.css}"/>
+</head>
+<body>
+<h1>Book List</h1>
+<h2> <a  href="addemployee">Add new employee</a> </h2>
+<h2> <a href="deleteemployee">Delete employee</a> </h2>
+<h2> <a href="updateemployee">Update employee</a> </h2>
+<br/><br/>
+
+<div class="container">
+  <table class ="container" border="1">
+    <tr>
+      <th><h1>Name</h1></th>
+      <th><h1>Department</h1></th>
+      <th><h1>Role</h1></th>
+    </tr>
+    <tr th:each ="emp : ${employees}">
+      <td th:utext="${emp.name}">...</td>
+      <td th:utext="${emp.department}">...</td>
+      <td th:utext="${emp.role}">...</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

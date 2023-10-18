@@ -1,0 +1,33 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body, input, button{
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight:300;
+    line-height:1.42em;
+    color:#a7a1ae;
+    background-color: #1f2739;
+}
+
+h1{
+    font-size:3em;
+    font-weight:300;
+    line-height:1em;
+    text-align:center;
+    color:#4dc3fa;
+}
+h2{
+    font-size: 1em;
+    font-weight:300;
+    text-align:center;
+    display:block;
+    line-height:1em;
+    padding-bottom:2em;
+    color:#fb667a;
+}
+h2 a{
+    font-weight:700;
+    text-transform:uppercase;
+    color:#fb667a;
+    text-decoration:none;
+}
