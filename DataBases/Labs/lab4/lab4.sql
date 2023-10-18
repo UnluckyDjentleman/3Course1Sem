@@ -7,6 +7,8 @@ create tablespace GVS_QDATA
   size 10M
   offline;
   
+
+
 select TABLESPACE_NAME, STATUS, CONTENTS from SYS.dba_tablespaces;
 
 alter tablespace GVS_QDATA ONLINE;
@@ -57,21 +59,22 @@ select * from V$LOGFILE order by GROUP#;
 --11
 --it cannot be executed from pdb, so
 --you should connect to cdb$root
+alter session set container=cdb$root;
 alter system switch logfile;
 select * from V$LOG order by GROUP#;
 --0.004s
 --12
-alter database add logfile group 4 '/opt/oracle/oradata/FREE/redo04.log' size 50m blocksize 512;
-alter database add logfile member '/opt/oracle/oradata/FREE/redo04_1.log' to group 4;
-alter database add logfile member '/opt/oracle/oradata/FREE/redo04_2.log' to group 4;
+alter database add logfile group 5 '/opt/oracle/oradata/FREE/redo05.log' size 50m blocksize 512;
+alter database add logfile member '/opt/oracle/oradata/FREE/redo05_1.log' to group 5;
+alter database add logfile member '/opt/oracle/oradata/FREE/redo05_2.log' to group 5;
 
 select * from V$LOG order by GROUP#;
 
 select * from V$LOGFILE order by GROUP#;
 --13
-alter database drop logfile member '/opt/oracle/oradata/FREE/redo04_2.log';
-alter database drop logfile member '/opt/oracle/oradata/FREE/redo04_1.log';
-alter database drop logfile group 4;
+alter database drop logfile member '/opt/oracle/oradata/FREE/redo05_2.log';
+alter database drop logfile member '/opt/oracle/oradata/FREE/redo05_1.log';
+alter database drop logfile group 5;
 
 select * from V$LOG order by GROUP#;
 
@@ -86,10 +89,37 @@ select INSTANCE_NAME, ARCHIVER, ACTIVE_STATE from v$instance;
 select * from v$archived_log;
 
 --16
---conn /as sysdba
---alter session set container=cdb$root; (it's a trap)
---shutdown immediate; (it's a trap)
+--sqlplus / as sysdba P.S. input in terminal: "unset TWO_TASK" before this
+--shutdown immediate; (it's not a trap xd)
 --startup mount;
 --alter database archivelog;
 --alter database open;
 --17
+alter session set container=cdb$root;
+alter system switch logfile;
+select max(sequence#) from v$archived_log;
+select * from v$archived_log;
+select * from v$log;
+--18
+--sqlplus / as sysdba P.S. input in terminal: "unset TWO_TASK" before this
+--shutdown immediate; (it's not a trap xd)
+--startup mount;
+--alter database noarchivelog;
+--alter database open;
+--19
+select * from v$controlfile;
+--20
+--sqlplus
+--show parameter control_files;
+--21
+--sqlplus
+--show parameter spfile;
+--22
+create pfile='/opt/oracle/product/23c/dbhomeFree/dbs/GVS_PFILE.ora' from spfile;
+--23
+show parameter password;
+--24
+show parameter background_dump_dest;
+--25
+--/opt/oracle/diag/rdbms/free/FREE/alert
+--26
