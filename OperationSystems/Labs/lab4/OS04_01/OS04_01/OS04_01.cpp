@@ -12,7 +12,6 @@ int main()
 		cout << "TID: " << GetCurrentThreadId() << "\n";
 		Sleep(1000);
 	}
-	//Áÿğíàöê³ - õóÿñîñ
 	return 0;
 
 }
