@@ -75,61 +75,27 @@ namespace HT {
 		htHandle->lastsnaptime = time(NULL);
 		return htHandle;
 	}
-	HTHANDLE* Open(const char FileName[512]) {
-		HANDLE hf = CreateFile(
-			(LPCWSTR)FileName,
-			GENERIC_WRITE | GENERIC_READ,
-			NULL,
-			NULL,
-			OPEN_ALWAYS,
-			FILE_ATTRIBUTE_NORMAL,
-			NULL
-		);
-		if (hf == INVALID_HANDLE_VALUE) {
-			throw "createFile was failed";
-		}
-		HANDLE hm = CreateFileMapping(
-			INVALID_HANDLE_VALUE,
-			NULL,
-			PAGE_READWRITE,
-			0, 0, (LPCWSTR)FileName);
-		if (hm == INVALID_HANDLE_VALUE) {
-			throw "createFileMapping was failed";
-		}
-		LPVOID lp = MapViewOfFile(hm, FILE_MAP_ALL_ACCESS, 0, 0, 0);
-		if (!lp) return NULL;
-		HTHANDLE* htHandle = new(lp) HTHANDLE();
-		htHandle->File = hf;
+	HTHANDLE* Open(const wchar_t* FileName) {
+		HANDLE hm = OpenFileMapping(
+			FILE_MAP_ALL_ACCESS,
+			false,
+			FileName);
+		if (!hm)
+			return NULL;
+
+		LPVOID lp = MapViewOfFile(
+			hm,
+			FILE_MAP_ALL_ACCESS,
+			0, 0, 0);
+		if (!lp)
+			return NULL;
+
+		HT::HTHANDLE* htHandle = new HT::HTHANDLE();
+		memcpy(htHandle, lp, sizeof(HT::HTHANDLE));
+		htHandle->File = NULL;
 		htHandle->FileMapping = hm;
 		htHandle->Addr = lp;
-		htHandle->lastsnaptime = time(NULL);
-		if (htHandle == NULL) {
-			hm = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, 0, (LPCWSTR)FileName);
-			if (!hm) {
-				throw "createFileMapping was failed";
-			}
-			lp = MapViewOfFile(hm, FILE_MAP_ALL_ACCESS, 0, 0, 0);
-			if (!lp) return NULL;
-			htHandle = (HTHANDLE*)lp;
-			int sizeMapping = sizeof(HTHANDLE) + (htHandle->MaxKeyLength + htHandle->MaxPayloadLength + sizeof(int) * 2) * htHandle->Capacity;
-			if (!UnmapViewOfFile(lp)) {
-				return NULL;
-			}
-			if (!CloseHandle(hm)) {
-				return NULL;
-			}
-			hm = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeMapping, (LPCWSTR)FileName);
-			if (!hm) return NULL;
-			lp = MapViewOfFile(hm, FILE_MAP_ALL_ACCESS, 0, 0, 0);
-			if (!lp) return NULL;
-			htHandle = new HTHANDLE();
-			memcpy(htHandle, lp, sizeof(htHandle));
-			htHandle->File = NULL;
-			htHandle->FileMapping = hm;
-			htHandle->Addr = lp;
-			htHandle->lastsnaptime = time(NULL);
-			return htHandle;
-		}
+
 		return htHandle;
 	}
 	BOOL Snap(const HTHANDLE* hthandle) {
@@ -251,13 +217,15 @@ namespace HT {
 	bool WriteToMem(const HTHANDLE* hthandle, const Element* element, int index) {
 		LPVOID lp = hthandle->Addr;
 		lp = (HTHANDLE*)lp + 1;
-		lp = (BYTE*)lp + (hthandle->MaxKeyLength + hthandle->MaxPayloadLength + sizeof(int) * 2);
+		lp = (BYTE*)lp + (hthandle->MaxKeyLength + hthandle->MaxPayloadLength + sizeof(int) * 2) * index;
 
 		memcpy(lp, element->key, element->keylength);
 		lp = (BYTE*)lp + hthandle->MaxKeyLength;
 		memcpy(lp, &element->keylength, sizeof(int));
 		lp = (int*)lp + 1;
 		memcpy(lp, element->payload, element->payloadlength);
+		lp = (byte*)lp + hthandle->MaxPayloadLength;
+		memcpy(lp, &element->payloadlength, sizeof(int));
 
 		return true;
 	}
@@ -272,6 +240,7 @@ namespace HT {
 		lp = (int*)lp + 1;
 		element->payload = lp;
 		lp = (BYTE*)lp + hthandle->MaxPayloadLength;
+		element->payloadlength = *(int*)lp;
 		return element;
 	}
 	BOOL clearMem(const HTHANDLE* hthandle, int index) {

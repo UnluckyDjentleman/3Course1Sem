@@ -51,12 +51,12 @@ namespace HT    // HT API
 		int   SecSnapshotInterval,		   // переодичность сохранения в сек.
 		int   MaxKeyLength,                // максимальный размер ключа
 		int   MaxPayloadLength,            // максимальный размер данных
-		const wchar_t*  FileName         // имя файла 
+		const wchar_t* FileName         // имя файла 
 	); 	// != NULL успешное завершение  
 
 	HTHANDLE* Open     //  открыть HT             
 	(
-		const char    FileName[512]         // имя файла 
+		const wchar_t* FileName         // имя файла 
 	); 	// != NULL успешное завершение  
 
 	BOOL Snap         // выполнить Snapshot
@@ -118,3 +118,4 @@ namespace HT    // HT API
 	int decrCount(HTHANDLE* hthandle);
 	int incrCount(HTHANDLE* hthandle);
 };
+

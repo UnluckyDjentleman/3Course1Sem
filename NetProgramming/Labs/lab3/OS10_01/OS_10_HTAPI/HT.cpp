@@ -217,13 +217,15 @@ namespace HT {
 	bool WriteToMem(const HTHANDLE* hthandle, const Element* element, int index) {
 		LPVOID lp = hthandle->Addr;
 		lp = (HTHANDLE*)lp + 1;
-		lp = (BYTE*)lp + (hthandle->MaxKeyLength + hthandle->MaxPayloadLength + sizeof(int) * 2);
+		lp = (BYTE*)lp + (hthandle->MaxKeyLength + hthandle->MaxPayloadLength + sizeof(int) * 2) * index;
 
 		memcpy(lp, element->key, element->keylength);
 		lp = (BYTE*)lp + hthandle->MaxKeyLength;
 		memcpy(lp, &element->keylength, sizeof(int));
 		lp = (int*)lp + 1;
 		memcpy(lp, element->payload, element->payloadlength);
+		lp = (BYTE*)lp + hthandle->MaxPayloadLength;
+		memcpy(lp, &element->payloadlength, sizeof(int));
 
 		return true;
 	}
@@ -238,6 +240,7 @@ namespace HT {
 		lp = (int*)lp + 1;
 		element->payload = lp;
 		lp = (BYTE*)lp + hthandle->MaxPayloadLength;
+		element->payloadlength = *(int*)lp;
 		return element;
 	}
 	BOOL clearMem(const HTHANDLE* hthandle, int index) {

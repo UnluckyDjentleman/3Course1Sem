@@ -1,4 +1,1 @@
-﻿  main.cpp
-D:\Sem31\NetProgramming\Labs\lab3\OS10_01\OS10_02\main.cpp(5,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Sem31\NetProgramming\Labs\lab3\OS10_01\OS10_02\main.cpp(6,9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  OS10_02.vcxproj -> D:\Sem31\NetProgramming\Labs\lab3\OS10_01\x64\Debug\OS10_02.exe
+﻿  OS10_02.vcxproj -> D:\Sem31\NetProgramming\Labs\lab3\OS10_01\x64\Debug\OS10_02.exe
