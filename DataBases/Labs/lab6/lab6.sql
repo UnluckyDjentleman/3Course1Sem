@@ -1,33 +1,34 @@
 --1
-select * from v$bgprocess;
+--sqlnet.ora -> look at screen1.png
+--tsnames.ora -> look at screen2.png
 --2
-select sid, process, name, description, program
-from v$session s join v$bgprocess using (paddr)
-where s.status = 'ACTIVE';
+--look at screen3.png
 --3
-show parameter db_writer_processes;
+--look at screen4.png
 --4
-select USERNAME, SID, STATUS, SERVER, MACHINE, PROGRAM from v$session order by USERNAME, SID;
+--Windows
+--HKEY_LOCAL_MACHINE/SOFTWARE/ORACLE
+--screen5.png
 --5
-select USERNAME, SID, STATUS, SERVER from v$session order by USERNAME, SID;
+--screen6.png
 --6
-select NAME, NETWORK_NAME, PDB from v$services;
+--screen7.png
 --7
-alter session set container=cdb$root;
-alter system set max_dispatchers=10;
-show parameter dispatcher;
+--screen7.png
+--screen8.png
 --8
---idk how to do it on linux, because Docker crushed my OS and I'm lazy to reinstall Oracle.
---but you can check if it works by
---ps -ef|grep tns
---for Windows
---services.msc -> OracleOraDB12Home1TNSListener
+--screen9.png
 --9
-select USERNAME, sid, PADDR, PROCESS, SERVER, STATUS, PROGRAM from v$session where USERNAME is not null;
-select ADDR, SPID, PNAME from v$process order by ADDR;
+--screen10.png
+--screen11.png
 --10
---$ORACLE_HOME\newtwork\admin
+--screen12.png
 --11
---start, stop, status, services, version, reload, save_config, trace, quit, exit, set, show
+--time to write scripts
+select * from dba_segments where owner='SYSTEM';
 --12
---lsnrctl services;
+create or replace view AllSegmentsInfo as
+select owner, segment_type, COUNT(*) as count_segments, sum(extents) as summary_extent, sum(blocks) as summary_blocks, sum(bytes)/1024 as summary_bytes 
+from dba_segments group by owner, segment_type;
+
+select * from AllSegmentsInfo;
