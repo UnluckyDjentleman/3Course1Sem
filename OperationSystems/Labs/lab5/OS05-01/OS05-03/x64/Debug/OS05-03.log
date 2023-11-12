@@ -1,0 +1,6 @@
+﻿  main.cpp
+D:\Sem31\OperationSystems\Labs\lab5\OS05-01\OS05-03\main.cpp(136,12): warning C4244: 'argument': conversion from 'DWORD_PTR' to 'int', possible loss of data
+D:\Sem31\OperationSystems\Labs\lab5\OS05-01\OS05-03\main.cpp(138,12): warning C4244: 'argument': conversion from 'DWORD_PTR' to 'int', possible loss of data
+D:\Sem31\OperationSystems\Labs\lab5\OS05-01\OS05-03\main.cpp(145,12): warning C4244: 'argument': conversion from 'DWORD_PTR' to 'int', possible loss of data
+D:\Sem31\OperationSystems\Labs\lab5\OS05-01\OS05-03\main.cpp(147,12): warning C4244: 'argument': conversion from 'DWORD_PTR' to 'int', possible loss of data
+  OS05-03.vcxproj -> D:\Sem31\OperationSystems\Labs\lab5\OS05-01\x64\Debug\OS05-03.exe
