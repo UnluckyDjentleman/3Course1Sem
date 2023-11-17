@@ -1,0 +1,14 @@
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\bin\Debug\net7.0\lab7.exe
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\bin\Debug\net7.0\lab7.deps.json
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\bin\Debug\net7.0\lab7.runtimeconfig.json
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\bin\Debug\net7.0\lab7.dll
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\bin\Debug\net7.0\lab7.pdb
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.AssemblyInfoInputs.cache
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.AssemblyInfo.cs
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.csproj.CoreCompileInputs.cache
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.dll
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\refint\lab7.dll
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.pdb
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\lab7.genruntimeconfig.cache
+D:\Sem31\SoftwareTesting\Labs\lab7\lab7\obj\Debug\net7.0\ref\lab7.dll
