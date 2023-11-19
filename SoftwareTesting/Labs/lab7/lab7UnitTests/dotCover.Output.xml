@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root CoveredStatements="88" TotalStatements="427" CoveragePercent="21" ReportType="Xml" DotCoverVersion="2023.2.3">
+  <Assembly Name="lab7" CoveredStatements="47" TotalStatements="72" CoveragePercent="65">
+    <Namespace Name="lab7" CoveredStatements="47" TotalStatements="56" CoveragePercent="84">
+      <Type Name="Triangle" CoveredStatements="47" TotalStatements="56" CoveragePercent="84">
+        <Method Name="AngleValues(double,double,double):List&lt;double&gt;" CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
+        <Method Name="CanCreateTriangle(double,double,double):bool" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="TriangleSquare(double,double,double):double" CoveredStatements="5" TotalStatements="7" CoveragePercent="71" />
+        <Method Name="TriangleTypeByAngles(double,double,double):string" CoveredStatements="16" TotalStatements="19" CoveragePercent="84" />
+        <Method Name="TriangleTypeBySides(double,double,double):string" CoveredStatements="10" TotalStatements="14" CoveragePercent="71" />
+      </Type>
+    </Namespace>
+    <Type Name="Program" CoveredStatements="0" TotalStatements="16" CoveragePercent="0">
+      <Method Name="Main(string[]):void" CoveredStatements="0" TotalStatements="16" CoveragePercent="0" />
+    </Type>
+  </Assembly>
+  <Assembly Name="lab7UnitTests" CoveredStatements="41" TotalStatements="44" CoveragePercent="93">
+    <Namespace Name="lab7UnitTests" CoveredStatements="41" TotalStatements="44" CoveragePercent="93">
+      <Type Name="Tests" CoveredStatements="41" TotalStatements="44" CoveragePercent="93">
+        <Method Name="Setup():void" CoveredStatements="3" TotalStatements="3" CoveragePercent="100" />
+        <Method Name="Test1():void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Test10():void" CoveredStatements="4" TotalStatements="5" CoveragePercent="80" />
+        <Method Name="Test2():void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Test3():void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Test4():void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Test5():void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Test6():void" CoveredStatements="3" TotalStatements="4" CoveragePercent="75">
+          <OwnCoverage CoveredStatements="2" TotalStatements="3" CoveragePercent="67" />
+          <AnonymousMethod Name="():void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </Method>
+        <Method Name="Test7():void" CoveredStatements="3" TotalStatements="4" CoveragePercent="75">
+          <OwnCoverage CoveredStatements="2" TotalStatements="3" CoveragePercent="67" />
+          <AnonymousMethod Name="():void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </Method>
+        <Method Name="Test8(double,double,double,string):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Test9(double,double,double,string):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+  </Assembly>
+  <Assembly Name="testhost" CoveredStatements="0" TotalStatements="311" CoveragePercent="0">
+    <Namespace Name="Microsoft.VisualStudio.TestPlatform.Execution" CoveredStatements="0" TotalStatements="157" CoveragePercent="0">
+      <Type Name="DebuggerBreakpoint" CoveredStatements="0" TotalStatements="73" CoveragePercent="0">
+        <Method Name="AttachVisualStudioDebugger(string):void" CoveredStatements="0" TotalStatements="16" CoveragePercent="0" />
+        <Method Name="AttachVs(Process,Nullable&lt;int&gt;):bool" CoveredStatements="0" TotalStatements="9" CoveragePercent="0" />
+        <Method Name="Break():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="BreakNative():void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="FindAttachVs():string" CoveredStatements="0" TotalStatements="10" CoveragePercent="0" />
+        <Method Name="FindOnPath(string):string" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+        <Method Name="ShouldNotBreak():bool" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        <Method Name="WaitForDebugger(string):void" CoveredStatements="0" TotalStatements="13" CoveragePercent="0" />
+        <Method Name="WaitForNativeDebugger(string):void" CoveredStatements="0" TotalStatements="8" CoveragePercent="0" />
+      </Type>
+      <Type Name="ProcDumpExecutableHelper" CoveredStatements="0" TotalStatements="47" CoveragePercent="0">
+        <Constructor Name="ProcDumpExecutableHelper(IProcessHelper,IFileHelper,IEnvironment,IEnvironmentVariableHelper)" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+        <Method Name="ProcDumpFileName(PlatformArchitecture):string" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="TryGetExecutablePath(string,out string):bool" CoveredStatements="0" TotalStatements="10" CoveragePercent="0" />
+        <Method Name="TryGetProcDumpExecutable(out string):bool" CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+        <Method Name="TryGetProcDumpExecutable(int,out string):bool" CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+        <Method Name="TryGetProcDumpExecutable(PlatformArchitecture,out string):bool" CoveredStatements="0" TotalStatements="23" CoveragePercent="0" />
+      </Type>
+      <Type Name="UiLanguageOverride" CoveredStatements="0" TotalStatements="37" CoveragePercent="0">
+        <Constructor Name="UiLanguageOverride()" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+          <AnonymousMethod Name="(CultureInfo):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Constructor>
+        <Constructor Name="UiLanguageOverride(IEnvironmentVariableHelper,Action&lt;CultureInfo&gt;)" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="ApplyOverrideToCurrentProcess(CultureInfo,Action&lt;CultureInfo&gt;):void" CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+        <Method Name="FlowOverrideToChildProcesses(CultureInfo,IEnvironmentVariableHelper):void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+        <Method Name="GetOverriddenUiLanguage(IEnvironmentVariableHelper):CultureInfo" CoveredStatements="0" TotalStatements="14" CoveragePercent="0" />
+        <Method Name="SetCultureSpecifiedByUser():void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+        <Method Name="SetIfNotAlreadySet(string,string,IEnvironmentVariableHelper):void" CoveredStatements="0" TotalStatements="4" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Microsoft.VisualStudio.TestPlatform.TestExecutor" CoveredStatements="0" TotalStatements="17" CoveragePercent="0">
+      <Type Name="UnitTestClient" CoveredStatements="0" TotalStatements="17" CoveragePercent="0">
+        <Method Name="CreateDefaultUI():void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        <Method Name="Run(string):void" CoveredStatements="0" TotalStatements="3" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+          <AnonymousMethod Name="():void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </Method>
+        <Method Name="SplitArguments(string):string[]" CoveredStatements="0" TotalStatements="13" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+    <Namespace Name="Microsoft.VisualStudio.TestPlatform.TestHost" CoveredStatements="0" TotalStatements="137" CoveragePercent="0">
+      <Type Name="DebugAssertException" CoveredStatements="0" TotalStatements="4" CoveragePercent="0">
+        <Constructor Name="DebugAssertException(string,string)" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        <AutoProperty Name="StackTrace:string" CoveredStatements="0" TotalStatements="1" CoveragePercent="0">
+          <PropertyGetter CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        </AutoProperty>
+      </Type>
+      <Type Name="DefaultEngineInvoker" CoveredStatements="0" TotalStatements="83" CoveragePercent="0">
+        <Constructor Name="DefaultEngineInvoker()" CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+        <Constructor Name="DefaultEngineInvoker(ITestRequestHandler,IDataCollectionTestCaseEventSender,IProcessHelper)" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+        <Method Name="ConnectToDatacollector(int):void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
+        <Method Name="GetConnectionInfo(IDictionary&lt;string,string&gt;):TestHostConnectionInfo" CoveredStatements="0" TotalStatements="11" CoveragePercent="0" />
+        <Method Name="GetTelemetryStatusFromArgs(IDictionary&lt;string,string&gt;):bool" CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+        <Method Name="InitializeEqtTrace(IDictionary&lt;string,string&gt;):void" CoveredStatements="0" TotalStatements="6" CoveragePercent="0" />
+        <Method Name="Invoke(IDictionary&lt;string,string&gt;):void" CoveredStatements="0" TotalStatements="30" CoveragePercent="0" />
+        <Method Name="SetParentProcessExitCallback(IDictionary&lt;string,string&gt;):void" CoveredStatements="0" TotalStatements="12" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="9" CoveragePercent="0" />
+          <AnonymousMethod Name="(object):void" CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+        </Method>
+        <Method Name="StartProcessingAsync(ITestRequestHandler,ITestHostManagerFactory):Task" CoveredStatements="0" TotalStatements="8" CoveragePercent="0">
+          <OwnCoverage CoveredStatements="0" TotalStatements="3" CoveragePercent="0" />
+          <AnonymousMethod Name="():void" CoveredStatements="0" TotalStatements="5" CoveragePercent="0" />
+        </Method>
+      </Type>
+      <Type Name="Program" CoveredStatements="0" TotalStatements="20" CoveragePercent="0">
+        <Method Name="GetEngineInvoker(IDictionary&lt;string,string&gt;):IEngineInvoker" CoveredStatements="0" TotalStatements="2" CoveragePercent="0" />
+        <Method Name="Main(string[]):void" CoveredStatements="0" TotalStatements="10" CoveragePercent="0" />
+        <Method Name="Run(string[]):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        <Method Name="Run(string[],UiLanguageOverride):void" CoveredStatements="0" TotalStatements="7" CoveragePercent="0" />
+      </Type>
+      <Type Name="TestHostTraceListener" CoveredStatements="0" TotalStatements="30" CoveragePercent="0">
+        <Method Name="Fail(string):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        <Method Name="Fail(string,string):void" CoveredStatements="0" TotalStatements="1" CoveragePercent="0" />
+        <Method Name="GetException(string):DebugAssertException" CoveredStatements="0" TotalStatements="18" CoveragePercent="0" />
+        <Method Name="Setup():void" CoveredStatements="0" TotalStatements="10" CoveragePercent="0" />
+      </Type>
+    </Namespace>
+  </Assembly>
+</Root>
