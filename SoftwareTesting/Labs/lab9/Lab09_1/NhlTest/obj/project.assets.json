@@ -385,6 +385,35 @@
       "NUnit.Analyzers/3.6.1": {
         "type": "package"
       },
+      "NUnit.Console/3.16.3": {
+        "type": "package",
+        "dependencies": {
+          "NUnit.ConsoleRunner": "3.16.3",
+          "NUnit.Extension.NUnitProjectLoader": "3.6.0",
+          "NUnit.Extension.NUnitV2Driver": "3.8.0",
+          "NUnit.Extension.NUnitV2ResultWriter": "3.6.0",
+          "NUnit.Extension.TeamCityEventListener": "1.0.7",
+          "NUnit.Extension.VSProjectLoader": "3.8.0"
+        }
+      },
+      "NUnit.ConsoleRunner/3.16.3": {
+        "type": "package"
+      },
+      "NUnit.Extension.NUnitProjectLoader/3.6.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.NUnitV2Driver/3.8.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.NUnitV2ResultWriter/3.6.0": {
+        "type": "package"
+      },
+      "NUnit.Extension.TeamCityEventListener/1.0.7": {
+        "type": "package"
+      },
+      "NUnit.Extension.VSProjectLoader/3.8.0": {
+        "type": "package"
+      },
       "NUnit3TestAdapter/4.4.2": {
         "type": "package",
         "build": {
@@ -409,6 +438,12 @@
         },
         "build": {
           "buildTransitive/Selenium.WebDriver.targets": {}
+        }
+      },
+      "Selenium.WebDriver.MSEdgeDriver/119.0.2151.42": {
+        "type": "package",
+        "build": {
+          "build/Selenium.WebDriver.MSEdgeDriver.targets": {}
         }
       },
       "System.Drawing.Common/7.0.0": {
@@ -1027,6 +1062,178 @@
         "tools/uninstall.ps1"
       ]
     },
+    "NUnit.Console/3.16.3": {
+      "sha512": "xLk1aH857DzkrTff35FLcZSUQ0AyWOovJWqv1VMA47ItlyfrDPUyryKcWY9h+DZrz/FOgiiBzsPSDxnDPnYgSw==",
+      "type": "package",
+      "path": "nunit.console/3.16.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "images/nunit_256.png",
+        "nunit.console.3.16.3.nupkg.sha512",
+        "nunit.console.nuspec"
+      ]
+    },
+    "NUnit.ConsoleRunner/3.16.3": {
+      "sha512": "bhc4f0oVdS70xLaulPu2dMuUWK6hLj5fWLWmUnvbxyEA9w41sZNe6Xb3vPkcp+5OrIqggmtcRbhX+o5hoz62Jg==",
+      "type": "package",
+      "path": "nunit.consolerunner/3.16.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "images/nunit_256.png",
+        "nunit.consolerunner.3.16.3.nupkg.sha512",
+        "nunit.consolerunner.nuspec",
+        "tools/agents/net20/nunit-agent-x86.exe",
+        "tools/agents/net20/nunit-agent-x86.exe.config",
+        "tools/agents/net20/nunit-agent.exe",
+        "tools/agents/net20/nunit-agent.exe.config",
+        "tools/agents/net20/nunit.agent.addins",
+        "tools/agents/net20/nunit.engine.api.dll",
+        "tools/agents/net20/nunit.engine.api.xml",
+        "tools/agents/net20/nunit.engine.core.dll",
+        "tools/agents/net20/testcentric.engine.metadata.dll",
+        "tools/agents/net462/nunit-agent-x86.exe",
+        "tools/agents/net462/nunit-agent-x86.exe.config",
+        "tools/agents/net462/nunit-agent.exe",
+        "tools/agents/net462/nunit-agent.exe.config",
+        "tools/agents/net462/nunit.agent.addins",
+        "tools/agents/net462/nunit.engine.api.dll",
+        "tools/agents/net462/nunit.engine.api.xml",
+        "tools/agents/net462/nunit.engine.core.dll",
+        "tools/agents/net462/testcentric.engine.metadata.dll",
+        "tools/agents/net5.0/Microsoft.Extensions.DependencyModel.dll",
+        "tools/agents/net5.0/nunit-agent.deps.json",
+        "tools/agents/net5.0/nunit-agent.dll",
+        "tools/agents/net5.0/nunit-agent.dll.config",
+        "tools/agents/net5.0/nunit-agent.runtimeconfig.json",
+        "tools/agents/net5.0/nunit.agent.addins",
+        "tools/agents/net5.0/nunit.engine.api.dll",
+        "tools/agents/net5.0/nunit.engine.api.xml",
+        "tools/agents/net5.0/nunit.engine.core.dll",
+        "tools/agents/net5.0/testcentric.engine.metadata.dll",
+        "tools/agents/net6.0/Microsoft.Extensions.DependencyModel.dll",
+        "tools/agents/net6.0/nunit-agent.deps.json",
+        "tools/agents/net6.0/nunit-agent.dll",
+        "tools/agents/net6.0/nunit-agent.dll.config",
+        "tools/agents/net6.0/nunit-agent.runtimeconfig.json",
+        "tools/agents/net6.0/nunit.agent.addins",
+        "tools/agents/net6.0/nunit.engine.api.dll",
+        "tools/agents/net6.0/nunit.engine.api.xml",
+        "tools/agents/net6.0/nunit.engine.core.dll",
+        "tools/agents/net6.0/testcentric.engine.metadata.dll",
+        "tools/agents/net7.0/Microsoft.Extensions.DependencyModel.dll",
+        "tools/agents/net7.0/nunit-agent.deps.json",
+        "tools/agents/net7.0/nunit-agent.dll",
+        "tools/agents/net7.0/nunit-agent.dll.config",
+        "tools/agents/net7.0/nunit-agent.runtimeconfig.json",
+        "tools/agents/net7.0/nunit.agent.addins",
+        "tools/agents/net7.0/nunit.engine.api.dll",
+        "tools/agents/net7.0/nunit.engine.api.xml",
+        "tools/agents/net7.0/nunit.engine.core.dll",
+        "tools/agents/net7.0/testcentric.engine.metadata.dll",
+        "tools/agents/netcoreapp3.1/Microsoft.Extensions.DependencyModel.dll",
+        "tools/agents/netcoreapp3.1/nunit-agent.deps.json",
+        "tools/agents/netcoreapp3.1/nunit-agent.dll",
+        "tools/agents/netcoreapp3.1/nunit-agent.dll.config",
+        "tools/agents/netcoreapp3.1/nunit-agent.runtimeconfig.json",
+        "tools/agents/netcoreapp3.1/nunit.agent.addins",
+        "tools/agents/netcoreapp3.1/nunit.engine.api.dll",
+        "tools/agents/netcoreapp3.1/nunit.engine.api.xml",
+        "tools/agents/netcoreapp3.1/nunit.engine.core.dll",
+        "tools/agents/netcoreapp3.1/testcentric.engine.metadata.dll",
+        "tools/nunit.console.nuget.addins",
+        "tools/nunit.engine.api.dll",
+        "tools/nunit.engine.api.xml",
+        "tools/nunit.engine.core.dll",
+        "tools/nunit.engine.dll",
+        "tools/nunit3-console.exe",
+        "tools/nunit3-console.exe.config",
+        "tools/testcentric.engine.metadata.dll"
+      ]
+    },
+    "NUnit.Extension.NUnitProjectLoader/3.6.0": {
+      "sha512": "ev2+dCJShMNIATkYNm/vHEuieBfbismr9DcUfBvafJZf5vNyugXPuMXO/MaOFcJaoW9j6/zjMmXKG7R5umWzXA==",
+      "type": "package",
+      "path": "nunit.extension.nunitprojectloader/3.6.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.nunitprojectloader.3.6.0.nupkg.sha512",
+        "nunit.extension.nunitprojectloader.nuspec",
+        "tools/nunit-project-loader.dll"
+      ]
+    },
+    "NUnit.Extension.NUnitV2Driver/3.8.0": {
+      "sha512": "l6MgFJPTnrlDaMXWfbUZ82h1uvtj0C1ExPpqm6HrYOBa5Z4MBwmFLqj85rnv9JMhu/Ju7jQB/FIaMbfoXInI2A==",
+      "type": "package",
+      "path": "nunit.extension.nunitv2driver/3.8.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.nunitv2driver.3.8.0.nupkg.sha512",
+        "nunit.extension.nunitv2driver.nuspec",
+        "tools/nunit.core.dll",
+        "tools/nunit.core.interfaces.dll",
+        "tools/nunit.v2.driver.addins",
+        "tools/nunit.v2.driver.dll"
+      ]
+    },
+    "NUnit.Extension.NUnitV2ResultWriter/3.6.0": {
+      "sha512": "P/Nc+wgFRe3dT59/VjhiIT0SWfLMbb/Vc9AtBU3L71VOCs8zQnuNjCOEFLQL/Mq6XSaZeB2Sug9tUgTfCnQk9w==",
+      "type": "package",
+      "path": "nunit.extension.nunitv2resultwriter/3.6.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.nunitv2resultwriter.3.6.0.nupkg.sha512",
+        "nunit.extension.nunitv2resultwriter.nuspec",
+        "tools/nunit-v2-result-writer.dll"
+      ]
+    },
+    "NUnit.Extension.TeamCityEventListener/1.0.7": {
+      "sha512": "bw+ZwHsUmxqb9leo91qLEF7ggtdpawY2V6wNqHI6+ATa2SHxHxoxiV5UV07ZWDRpf/qlQJELNlZu7wIB3+w2qQ==",
+      "type": "package",
+      "path": "nunit.extension.teamcityeventlistener/1.0.7",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.teamcityeventlistener.1.0.7.nupkg.sha512",
+        "nunit.extension.teamcityeventlistener.nuspec",
+        "tools/teamcity-event-listener.dll"
+      ]
+    },
+    "NUnit.Extension.VSProjectLoader/3.8.0": {
+      "sha512": "CIScV9a7+wUu6Ylb+WO0q/WGWQVoB05TUj3XZHa1CO+2BInDdfIVkqtlrSguhy6D/AGIMaLVrCZpQkQ2m0bbzQ==",
+      "type": "package",
+      "path": "nunit.extension.vsprojectloader/3.8.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "nunit.extension.vsprojectloader.3.8.0.nupkg.sha512",
+        "nunit.extension.vsprojectloader.nuspec",
+        "tools/vs-project-loader.dll"
+      ]
+    },
     "NUnit3TestAdapter/4.4.2": {
       "sha512": "vA/iHYcR+LYw+pRWQugckC/zW2fXHaqMr2uA82NOBt8v4YK4wMJrQ7QC8XLc7PjetEZ96cPbBTWsDDtmQiRZTA==",
       "type": "package",
@@ -1072,6 +1279,25 @@
         "manager/windows/selenium-manager.exe",
         "selenium.webdriver.4.15.0.nupkg.sha512",
         "selenium.webdriver.nuspec"
+      ]
+    },
+    "Selenium.WebDriver.MSEdgeDriver/119.0.2151.42": {
+      "sha512": "B3Jk7afDNSDL1S1X2Jr6nb/Ztq1yAjgrIR2OQl++prgyN0DCgn7B5wg5pKErJS7gCmMJcvj+KA3OElJRlPTEgw==",
+      "type": "package",
+      "path": "selenium.webdriver.msedgedriver/119.0.2151.42",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "build/DefinePropertiesMSEdgeDriver.targets",
+        "build/Selenium.WebDriver.MSEdgeDriver.targets",
+        "driver/linux64/msedgedriver",
+        "driver/mac64/msedgedriver",
+        "driver/win32/msedgedriver.exe",
+        "driver/win64/msedgedriver.exe",
+        "selenium.webdriver.msedgedriver.119.0.2151.42.nupkg.sha512",
+        "selenium.webdriver.msedgedriver.nuspec"
       ]
     },
     "System.Drawing.Common/7.0.0": {
@@ -1138,8 +1364,10 @@
       "Microsoft.NET.Test.Sdk >= 17.6.0",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
+      "NUnit.Console >= 3.16.3",
       "NUnit3TestAdapter >= 4.4.2",
       "Selenium.WebDriver >= 4.15.0",
+      "Selenium.WebDriver.MSEdgeDriver >= 119.0.2151.42",
       "coverlet.collector >= 3.2.0"
     ]
   },
@@ -1194,6 +1422,10 @@
             "target": "Package",
             "version": "[3.6.1, )"
           },
+          "NUnit.Console": {
+            "target": "Package",
+            "version": "[3.16.3, )"
+          },
           "NUnit3TestAdapter": {
             "target": "Package",
             "version": "[4.4.2, )"
@@ -1201,6 +1433,10 @@
           "Selenium.WebDriver": {
             "target": "Package",
             "version": "[4.15.0, )"
+          },
+          "Selenium.WebDriver.MSEdgeDriver": {
+            "target": "Package",
+            "version": "[119.0.2151.42, )"
           },
           "coverlet.collector": {
             "target": "Package",

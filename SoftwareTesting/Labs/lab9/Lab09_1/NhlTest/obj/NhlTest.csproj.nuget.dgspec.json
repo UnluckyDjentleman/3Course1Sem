@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[3.6.1, )"
             },
+            "NUnit.Console": {
+              "target": "Package",
+              "version": "[3.16.3, )"
+            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.4.2, )"
@@ -59,6 +63,10 @@
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.15.0, )"
+            },
+            "Selenium.WebDriver.MSEdgeDriver": {
+              "target": "Package",
+              "version": "[119.0.2151.42, )"
             },
             "coverlet.collector": {
               "target": "Package",
