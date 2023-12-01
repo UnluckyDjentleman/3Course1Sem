@@ -1,0 +1,14 @@
+﻿  pch.cpp
+  dllmain.cpp
+  HT.cpp
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.h(35,3): warning C4091: '__declspec(dllexport)': ignored on left of 'HT::HTHANDLE' when no variable is declared
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.h(47,3): warning C4091: '__declspec(dllexport)': ignored on left of 'HT::Element' when no variable is declared
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.cpp(57,4): warning C4297: 'HT::Create': function assumed not to throw an exception but does
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.cpp(57,4): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.cpp(66,4): warning C4297: 'HT::Create': function assumed not to throw an exception but does
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.cpp(66,4): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.cpp(94,6): warning C4297: 'HT::Open': function assumed not to throw an exception but does
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.cpp(94,6): message : __declspec(nothrow), throw(), noexcept(true), or noexcept was specified on the function
+  Generating Code...
+     Creating library D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\x64\Debug\Dll_Lab4.lib and object D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\x64\Debug\Dll_Lab4.exp
+  Dll_Lab4.vcxproj -> D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\x64\Debug\Dll_Lab4.dll

@@ -1,0 +1,7 @@
+﻿  main.cpp
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.h(35,3): warning C4091: '__declspec(dllexport)': ignored on left of 'HT::HTHANDLE' when no variable is declared
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Dll_Lab4\HT.h(47,3): warning C4091: '__declspec(dllexport)': ignored on left of 'HT::Element' when no variable is declared
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Lab4_04\main.cpp(16,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Lab4_04\main.cpp(29,75): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\Lab4_04\main.cpp(33,70): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Lab4_04.vcxproj -> D:\Sem31\NetProgramming\Labs\lab4\Dll_Lab4\x64\Debug\Lab4_04.exe
