@@ -5,12 +5,14 @@ select * from v$sga;
 --3
 select component, granule_size, current_size/granule_size as Ratio from v$sga_dynamic_components;
 --4
-select current_size from v$sga_free_memory;
+select current_size from v$sga_dynamic_free_memory;
 --5
 --in sqlplus
 --show parameter sga
 --6
-select component, min_size, current_size, max_size from v$sga_dynamic_components where component like '%KEEP%'||'%RECYCLE%'||'%DEFAULT buffer cache%';
+select component, min_size, current_size, max_size from v$sga_dynamic_components where component like '%RECYCLE%';
+select component, min_size, current_size, max_size from v$sga_dynamic_components where component like '%KEEP%';
+select component, min_size, current_size, max_size from v$sga_dynamic_components where component like '%DEFAULT%';
 --7
 create table GVS (x int) storage(buffer_pool keep) tablespace users;
 insert into GVS values(6);
@@ -23,6 +25,8 @@ commit;
 
 select * from dba_segments where segment_name like '%GVS%';
 
+drop table GVS;
+
 --8
 create table GVS1 (x int) cache storage(buffer_pool default) tablespace users;
 insert into GVS1 values(6);
@@ -33,7 +37,9 @@ insert into GVS1 values(5);
 insert into GVS1 values(2016);
 commit;
 
-select * from dba_segments where segment_name like '%GVS1%';
+select * from dba_segments where segment_name like '%GVS%';
+
+drop table gvs1;
 
 --9
 --in sqlplus
@@ -67,6 +73,8 @@ select name, network_name, pdb from v$services;
 --idk how to do it on linux, because Docker crushed my OS and I'm lazy to reinstall Oracle.
 --but you can check if it works by
 --ps -ef|grep tns
+--for Windows
+--services.msc -> OracleOraDB12Home1TNSListener
 
 --18
 --$ORACLE_HOME\network\admin
@@ -75,4 +83,7 @@ select name, network_name, pdb from v$services;
 --look at screen.png
 --start, stop, status, services, version, reload, save_config, trace, quit, exit, set, show
 --20
---lsnctrl services in sqlplus
+
+
+--don't give a fuck please
+

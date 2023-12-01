@@ -3,8 +3,8 @@ select * from dba_data_files;
 select * from dba_temp_files;
 --2
 create tablespace GVS_QDATA
-  datafile 'GVS_QDATA.dbf' 
-  size 10M
+  datafile 'GVS_QDATA_2.dbf' 
+  size 10m
   offline;
   
 
@@ -13,7 +13,7 @@ select TABLESPACE_NAME, STATUS, CONTENTS from SYS.dba_tablespaces;
 
 alter tablespace GVS_QDATA ONLINE;
 
-alter user GVSCORE quota 2M on GVS_QDATA;
+alter user gvscore quota 2M on GVS_QDATA;
 
 drop tablespace GVS_QDATA including CONTENTS and DATAFILES;
 
@@ -64,17 +64,17 @@ alter system switch logfile;
 select * from V$LOG order by GROUP#;
 --0.004s
 --12
-alter database add logfile group 5 '/opt/oracle/oradata/FREE/redo05.log' size 50m blocksize 512;
-alter database add logfile member '/opt/oracle/oradata/FREE/redo05_1.log' to group 5;
-alter database add logfile member '/opt/oracle/oradata/FREE/redo05_2.log' to group 5;
+alter database add logfile group 6 '/opt/oracle/oradata/FREE/redo06.log' size 50m blocksize 512;
+alter database add logfile member '/opt/oracle/oradata/FREE/redo06_1.log' to group 6;
+alter database add logfile member '/opt/oracle/oradata/FREE/redo06_2.log' to group 6;
 
 select * from V$LOG order by GROUP#;
 
 select * from V$LOGFILE order by GROUP#;
 --13
-alter database drop logfile member '/opt/oracle/oradata/FREE/redo05_2.log';
-alter database drop logfile member '/opt/oracle/oradata/FREE/redo05_1.log';
-alter database drop logfile group 5;
+alter database drop logfile member '/opt/oracle/oradata/FREE/redo06_2.log';
+alter database drop logfile member '/opt/oracle/oradata/FREE/redo06_1.log';
+alter database drop logfile group 6;
 
 select * from V$LOG order by GROUP#;
 
@@ -85,7 +85,6 @@ select DBID, NAME, LOG_MODE from V$DATABASE;
 select INSTANCE_NAME, ARCHIVER, ACTIVE_STATE from v$instance;
 
 --15
---It should be empty
 select * from v$archived_log;
 
 --16
@@ -123,3 +122,5 @@ show parameter background_dump_dest;
 --25
 --/opt/oracle/diag/rdbms/free/FREE/alert
 --26
+--lol we've already dropped it lol
+--but we also should delete reserved logfiles with group 1,2,3...

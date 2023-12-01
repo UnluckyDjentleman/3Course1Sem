@@ -1,11 +1,11 @@
 select username from dba_users;
 
-
+select * from dba_tablespaces;
 --------------------------------1--------------------------------------
 drop tablespace TS_GVS including CONTENTS and DATAFILES;
 
 create tablespace TS_GVS 
-datafile 'TS_GVS_1.dbf'
+datafile 'TS_GVS_2.dbf'
 size 7M
 autoextend on next 5M
 maxsize 20M;
@@ -13,7 +13,7 @@ maxsize 20M;
 
 --------------------------------2--------------------------------------
 create temporary tablespace TS_GVS_TEMP 
-tempfile 'TS_GVS_TEMP_1.dbf'
+tempfile 'TS_GVS_TEMP_2.dbf'
 size 5M
 autoextend on next 3M
 maxsize 30M;
@@ -23,6 +23,7 @@ drop tablespace TS_GVS_TEMP including CONTENTS and DATAFILES;
 --------------------------------3--------------------------------------
 --all files
 select * from dba_data_files;
+select * from dba_temp_files;
 
 --all tablespaces
 select * from dba_tablespaces;
@@ -72,6 +73,9 @@ where PROFILE = 'PF_GVSCORE';
 -- List of default
 select PROFILE, RESOURCE_NAME, LIMIT from dba_profiles 
 where PROFILE = 'DEFAULT';
+--
+select * from dba_profiles where LIMIT='DEFAULT';
+
 
 -------------------8------------------------------------
 
@@ -79,8 +83,12 @@ create user GVSCORE identified by 9900
 default tablespace TS_GVS quota unlimited on TS_GVS
 temporary tablespace TS_GVS_TEMP
 profile PF_GVSCORE
-account unlock
-password expire
+account unlock;
+--password expire
+
+show con_name;
+alter session set container=freepdb1;
+select * from dba_users;
 
 grant create session, connect, create any table, create any view, create any procedure, drop any table, drop any view, drop any procedure to GVSCORE;
 
@@ -117,7 +125,7 @@ select * from GVSCORE_GURO;
 
 drop view GVSCORE_GURO;
 
------------------------------------------  TASK 11  ------------------------------------------
+-----------------------------------------11------------------------------------------
 
 create tablespace GVS_QDATA
   datafile 'GVS_QDATA.dbf' 
@@ -130,7 +138,7 @@ alter tablespace GVS_QDATA ONLINE;
 
 alter user GVSCORE quota 2M on GVS_QDATA;
 
-drop tablespace GVS_QDATA;
+drop tablespace GVS_QDATA including CONTENTS and DATAFILES;
 
 -- connect GVSCORE
 
