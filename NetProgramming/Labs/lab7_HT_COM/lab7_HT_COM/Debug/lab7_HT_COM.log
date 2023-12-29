@@ -1,0 +1,11 @@
+﻿  pch.cpp
+  CA.cpp
+D:\Sem31\NetProgramming\Labs\lab7_HT_COM\lab7_HT_COM\CA.cpp(632,20): warning C4018: '<': signed/unsigned mismatch
+D:\Sem31\NetProgramming\Labs\lab7_HT_COM\lab7_HT_COM\CA.cpp(661,21): warning C4018: '<': signed/unsigned mismatch
+  DllCOM.cpp
+  dllmain.cpp
+  HT.cpp
+  OperFactory.cpp
+  Registry.cpp
+  Generating Code...
+  lab7_HT_COM.vcxproj -> D:\Sem31\NetProgramming\Labs\lab7_HT_COM\Debug\lab7_HT_COM.dll

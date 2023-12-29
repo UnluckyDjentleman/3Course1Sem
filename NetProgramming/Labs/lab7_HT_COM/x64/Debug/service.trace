@@ -1,0 +1,16 @@
+Start service
+HT-Storage Start
+
+MaxKeyLength: 
+4
+
+MaxPayloadLength: 
+4
+
+SecSnapshotInterval: 
+3
+
+Capacity: 
+200
+Stop service
+Close ht

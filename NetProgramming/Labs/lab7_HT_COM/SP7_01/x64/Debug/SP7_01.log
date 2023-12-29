@@ -1,0 +1,3 @@
+﻿  Source.cpp
+D:\Sem31\NetProgramming\Labs\lab7_HT_COM\SP7_01\Source.cpp(80,89): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  SP7_01.vcxproj -> D:\Sem31\NetProgramming\Labs\lab7_HT_COM\x64\Debug\SP7_01.exe
