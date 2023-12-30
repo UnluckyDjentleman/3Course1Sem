@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+    <welcome-file-list>
+        <welcome-file>GuestPages/mainPageGuest.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>GetUserServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.GetUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GetUserServlet</servlet-name>
+        <url-pattern>/GetUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>NewUserServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.NewUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>NewUserServlet</servlet-name>
+        <url-pattern>/NewUserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LikeSongServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.LikeSongServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LikeSongServlet</servlet-name>
+        <url-pattern>/LikeSongServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>LikeAlbumServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.LikeAlbumServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LikeAlbumServlet</servlet-name>
+        <url-pattern>/LikeAlbumServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+    <servlet-name>SongRemover</servlet-name>
+    <servlet-class>com.example.dalvhikkirecordsapp.Servlets.DeleteSong</servlet-class>
+</servlet>
+
+    <servlet-mapping>
+        <servlet-name>SongRemover</servlet-name>
+        <url-pattern>/SongRemover</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateSongServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.UpdateSong</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateSongServlet</servlet-name>
+        <url-pattern>/UpdateSongServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddSongServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.AddSong</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddSongServlet</servlet-name>
+        <url-pattern>/AddSongServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddBandServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.AddBand</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddBandServlet</servlet-name>
+        <url-pattern>/AddBandServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddAlbumServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.AddAlbum</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddAlbumServlet</servlet-name>
+        <url-pattern>/AddAlbumServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddBandMemberServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.AddBandMember</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddBandMemberServlet</servlet-name>
+        <url-pattern>/AddBandMemberServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>UpdateBandMemberServlet</servlet-name>
+        <url-pattern>/UpdateBandMemberServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateBandMemberServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.UpdateBandMember</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteBandMemberServlet</servlet-name>
+        <url-pattern>/DeleteBandMemberServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteBandMemberServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.DeleteBandMember</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>UpdateBandServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.UpdateBand</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateBandServlet</servlet-name>
+        <url-pattern>/UpdateBandServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>BandRemover</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.DeleteBand</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>BandRemover</servlet-name>
+        <url-pattern>/BandRemover</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UpdateAlbumServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.UpdateAlbum</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateAlbumServlet</servlet-name>
+        <url-pattern>/UpdateAlbumServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AlbumRemover</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.DeleteAlbum</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AlbumRemover</servlet-name>
+        <url-pattern>/AlbumRemover</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FilterSongsServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.FilterSongs</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FilterSongsServlet</servlet-name>
+        <url-pattern>/FilterSongsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FilterBandsServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.FilterBands</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FilterBandsServlet</servlet-name>
+        <url-pattern>/FilterBandsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>FilterAlbumServlet</servlet-name>
+        <servlet-class>com.example.dalvhikkirecordsapp.Servlets.FilterAlbums</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>FilterAlbumServlet</servlet-name>
+        <url-pattern>/FilterAlbumServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
