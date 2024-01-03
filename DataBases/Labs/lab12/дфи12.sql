@@ -8,6 +8,7 @@ groupid int,
 name nvarchar2(50)
 );
 
+drop table Students;
 --2
 
 insert into Students(courseid,groupid,name) values(1,3,'Jan Novak');
@@ -46,8 +47,8 @@ dbms_output.put_line('Deleted');
 end;
 
 insert into Students(courseid,groupid,name) values (3,2,'Anna Ivanova');
-update students set groupid=4, name='xd xd' where id=12;
-delete from Students where id=5;
+update students set groupid=4, name='xd xd' where id=1;
+delete from Students where id=9;
 select * from students;
 --4
 create or replace trigger INSERTBEFOREROW
@@ -114,7 +115,7 @@ create or replace trigger INSERT_TR_AFTER_STATEMENTROW
     on Students
     for each row
 begin
-    DBMS_OUTPUT.PUT_LINE('INSERT_TR_AFTER_STATEMENT');
+    DBMS_OUTPUT.PUT_LINE('INSERT_TR_AFTER_STATEMENTROW');
 end;
 
 create or replace trigger UPDATE_TR_AFTER_STATEMENTROW
@@ -224,6 +225,8 @@ begin
         RAISE_APPLICATION_ERROR(-20000, 'You can not drop table TASK_TABLE.');
     end if;
 end;
+
+drop trigger TRIGGER_PREVENT_TABLE_DROP; 
 
 insert into Students(courseid,groupid,name) values (11,11,'f');
 

@@ -179,3 +179,8 @@ drop table T_RANGE;
 drop table T_LIST;
 drop table T_HASH;
 drop table T_INTERVAL;
+
+drop tablespace t1 including contents and datafiles;
+drop tablespace t2 including contents and datafiles;
+drop tablespace t3 including contents and datafiles;
+drop tablespace t4 including contents and datafiles;
